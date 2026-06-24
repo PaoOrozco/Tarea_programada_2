@@ -1,8 +1,25 @@
+"""
+Script principal para el procesamiento automático de imágenes.
+
+Este programa recorre un directorio de entrada que contiene imágenes,
+les aplica transformaciones (redimensionado, escala de grises y marca de agua),
+y guarda los resultados en un directorio de salida.
+
+Además, genera un reporte en formato Excel con información relevante
+de cada imagen procesada.
+
+Dependencias:
+- Pillow
+- xlsxwriter
+
+Autor: Paola Orozco
+"""
+
 import os
 from PIL import Image
 from funciones import aplicar_marca_agua, calcular_resize, convertir_grises, generar_reporte
 
-# Confirguración de los directorios de entrada y salida de datos y la ruta de la marca de agua.
+# Configuración de los directorios de entrada y salida de datos y la ruta de la marca de agua.
 directorio_entrada = "imagenes_entrada"
 directorio_salida = "imagenes_salida"
 marca_ruta = "camara_firma.png"
@@ -34,7 +51,7 @@ for archivo in os.listdir(directorio_entrada):
             # Aplicar la marca de agua
             imagen = aplicar_marca_agua(imagen, Image.open(marca_ruta).convert("RGBA"))
 
-            # Ruta de salida de las imagen procesada
+            # Ruta de salida de la imagen procesada
             ruta_salida = os.path.join(directorio_salida, archivo)
             
             # Guardar imagen procesada
@@ -44,19 +61,19 @@ for archivo in os.listdir(directorio_entrada):
                        
             # Guardar datos para Excel
             reporte_final.append([
-            archivo,
-            formato,
-            ancho_original,
-            alto_original,
-            estado])
+                archivo,
+                formato,
+                ancho_original,
+                alto_original,
+                estado
+            ])
 
         except Exception as e:
             print(f"Error en {archivo}: {e}")
 
-               
-# Imprime el reporte en XlsxWriter
-            
+# Generar el reporte en Excel
 reporte_ruta = os.path.join(directorio_salida, "reporte_imagenes.xlsx") 
 generar_reporte(reporte_ruta, reporte_final)
 
 print("Reporte generado:", reporte_ruta)
+
