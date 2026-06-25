@@ -74,7 +74,7 @@ Este proyecto fue desarrollado como parte de la Tarea Programada #2, con el obje
 ---
 
 
-## 📚 Documentación
+## Documentación
 
 La documentación del proyecto fue generada automáticamente utilizando Sphinx.
 
