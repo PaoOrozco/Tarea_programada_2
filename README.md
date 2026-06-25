@@ -29,6 +29,7 @@ El sistema toma un conjunto de imágenes y realiza automáticamente varias trans
 │── main.py               # Script principal
 │── requirements.txt      # Dependencias del proyecto
 │── README.md             # Documentación básica
+│── source/               # Documentación generada con Sphinx
 
 ---
 
@@ -69,6 +70,13 @@ XlsxWriter
 
 ## Contexto del proyecto
 Este proyecto fue desarrollado como parte de la Tarea Programada #2, con el objetivo de automatizar el procesamiento de imágenes y la generación de reportes detallados. [Tarea programada #2 | PDF]
+
+---
+
+
+## 📚 Documentación
+
+La documentación del proyecto fue generada automáticamente utilizando Sphinx.
 
 ---
 
