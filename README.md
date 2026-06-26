@@ -53,8 +53,7 @@ python main.py
 
 Imágenes procesadas en la carpeta output/
 Archivo de reporte:
-reporte_imagenes.xlsx o
-catalogo_imagenes.pdf
+reporte_imagenes.xlsx
 
 ---
 
